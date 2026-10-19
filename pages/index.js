@@ -1,30 +1,8 @@
-import { getPostData } from '../lib/posts';
 import Head from 'next/head';
-
-export async function getStaticProps(){
-  const postData= await getPostData();
-  return{
-    props:{
-      postData,
-    },
-  };
+import { getPostData } from '../lib/posts';
+export async function getStaticProps() {
+  return { props: { postData: getPostData() } };
 }
-export default function Home({postData}){
-  const { data, content}=postData;
-  return(
-    <>
-    <Head>
-      <title>My Static Site</title>
-      <meta name = "description" content="This is a sample static site."/>
-      <meta property = "og:title" content="My Static Site"/>
-      <meta property = "og:description" content="This is a sample static site using Next.js"/>
-    </Head>
-    <div>
-      <h1>{postData.data.title}</h1>
-      <h1>{postData.data.data}</h1>
-      <h1>{postData.data.content}</h1>
-      <div dangerouslySetInnerHTML={{__html: content}}/>
-    </div>
-    </>
-  )
+export default function Home({ postData }) {
+  return <><Head><title>{postData.data.title || 'Static Site'}</title><meta name="description" content="A local Markdown static generation exercise." /></Head><main><h1>{postData.data.title}</h1><p>{postData.data.date || ''}</p><pre style={{whiteSpace:'pre-wrap'}}>{postData.content}</pre></main></>;
 }

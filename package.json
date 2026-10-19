@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next export",
+    "build": "next build",
     "deploy": "next build && gh-pages -d out"
   },
   "keywords": [],
@@ -13,11 +13,9 @@
   "license": "ISC",
   "dependencies": {
     "gray-matter": "^4.0.3",
-    "next": "^15.0.3",
+    "next": "15.5.28",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "remark": "^15.0.1",
-    "remark-html": "^16.0.1"
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
     "gh-pages": "^6.2.0"
