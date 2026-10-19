@@ -3,10 +3,10 @@
   "summary": {
     "info": 0,
     "low": 0,
-    "moderate": 3,
-    "high": 10,
+    "moderate": 5,
+    "high": 6,
     "critical": 0,
-    "total": 13
+    "total": 11
   },
-  "note": "Audit snapshot; dependencies can acquire new advisories. No forced major upgrades applied."
+  "note": "Compatible fixes applied. Remaining advisories are documented; no forced major upgrades."
 }
